@@ -1,5 +1,5 @@
 class ThemisLibressl < Formula
-  desc "High-level cryptographic primitives (OpenSSL flavor)"
+  desc "High-level cryptographic primitives (LibreSSL flavor)"
   homepage "https://www.cossacklabs.com/themis"
   url "https://github.com/cossacklabs/themis/archive/0.10.0.tar.gz"
   sha256 "329a981e7e57a90107b330172b738104f7189cb20eac043d708c23c5db1570fb"
