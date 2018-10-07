@@ -1,0 +1,23 @@
+language: objective-c
+rvm: system
+
+before_install:
+- brew update
+- brew --env
+- brew config
+
+install:
+- mkdir -p $(brew --repo)/Library/Taps/ilammy
+- ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/ilammy/homebrew-themis
+
+script:
+# OpenSSL flavor
+- brew install themis-openssl --verbose
+- brew audit themis-openssl --strict
+- brew test themis-openssl
+- brew remove themis-openssl
+# LibreSSL flavor
+- brew install themis-libressl --verbose
+- brew audit themis-libressl --strict
+- brew test themis-libressl
+- brew remove themis-libressl
