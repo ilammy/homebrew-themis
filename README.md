@@ -1,5 +1,7 @@
 # homebrew-themis
 
+[![Build Status](https://travis-ci.org/ilammy/homebrew-themis.svg?branch=master)](https://travis-ci.org/ilammy/homebrew-themis)
+
 Homebrew formulas for [Themis] crypto library.
 
 [Themis]: https://github.com/cossacklabs/themis
