@@ -11,6 +11,11 @@ install:
 - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/ilammy/homebrew-themis
 
 script:
+# BoringSSL flavor
+- brew install themis --verbose
+- brew audit themis --strict
+- brew test themis
+- brew remove themis
 # OpenSSL flavor
 - brew install themis-openssl --verbose
 - brew audit themis-openssl --strict

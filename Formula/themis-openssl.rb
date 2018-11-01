@@ -5,7 +5,8 @@ class ThemisOpenssl < Formula
   sha256 "329a981e7e57a90107b330172b738104f7189cb20eac043d708c23c5db1570fb"
 
   depends_on "openssl"
-  conflicts_with "themis-libressl", :because => "only one flavor of Themis can exist in PATH"
+  conflicts_with "themis", "themis-libressl",
+    :because => "only one flavor of Themis can exist in PATH"
 
   def install
     ENV["ENGINE"] = "openssl"
