@@ -18,31 +18,34 @@ brew tap ilammy/homebrew-themis
 Then you may install the latest stable release:
 
 ```console
-brew install themis-openssl
+brew install themis
 ```
 
 In order to upgrade run this:
 
 ```console
 brew update
-brew upgrade themis-openssl
+brew upgrade themis
 ```
 
 ## Selecting Crypto Backend
 
-Currently Themis leverages existing cryptographic libraries for its operation.
-Themis supports OpenSSL, LibreSSL, and BoringSSL as engine backends.
-Homebrew core currently provides only OpenSSL and LibreSSL.
-You need to select the backend by installing an appropriate Themis flavor:
+Themis leverages existing cryptographic libraries for its operation.
+Currently BoringSSL, LibreSSL, OpenSSL are supported as engine backends.
+You may select the backend by installing an appropriate Themis flavor:
 
+- `themis` (BoringSSL is the default)
 - `themis-openssl`
 - `themis-libressl`
 
-The appropriate backend library will be pulled and installed automatically.
+By default, Themis uses its own private version of BoringSSL.
+OpenSSL and LibreSSL flavors use libraries provided by Homebrew,
+they will be pulled and installed automatically if necessary.
 
-Please note that you cannot have both flavors simultaneously _linked_
+Please note that you cannot have multiple flavors simultaneously _linked_
 (installed into the default search path).
-You can have both available, but first you must `brew unlink` one of them.
+You can have them installed and available for applications,
+but you must `brew unlink` them to avoid conflicts.
 
 ## Usage
 
@@ -54,7 +57,7 @@ You can check the installation like this
 by asking Homebrew to compile a simple C program linking it against Themis:
 
 ```console
-brew test themis-openssl
+brew test themis
 ```
 
 ## Licensing
